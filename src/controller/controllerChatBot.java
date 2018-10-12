@@ -1,6 +1,7 @@
 package controller;
 
 import javax.swing.JOptionPane;
+import Model.chatBotModel;
 
 public class controllerChatBot
 {
@@ -10,7 +11,7 @@ public class controllerChatBot
 	}
 	
 	public void start() {
-		String userText = JOptionPane.showInputDialog(null, "");
+		askName();
 		while(!userText.equalsIgnoreCase("quit")) {
 			userText = JOptionPane.showInputDialog(null, "Type 'quit' to exit");
 		}
