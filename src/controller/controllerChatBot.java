@@ -11,7 +11,7 @@ public class controllerChatBot
 	}
 	
 	public void start() {
-		askName();
+		String userText = JOptionPane.showInputDialog(null, "type anything");
 		while(!userText.equalsIgnoreCase("quit")) {
 			userText = JOptionPane.showInputDialog(null, "Type 'quit' to exit");
 		}
