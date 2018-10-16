@@ -6,10 +6,12 @@ import Model.chatBotModel;
 public class controllerChatBot
 {
 	
-	public controllerChatBot() {
-		
-	}
+	private chatBotModel simpleBot;
 	
+	public controllerChatBot() {
+		simpleBot = new chatBotModel();
+	}
+	 
 	public void start() {
 		String userText = JOptionPane.showInputDialog(null, "type anything");
 		while(!userText.equalsIgnoreCase("quit")) {

@@ -1,14 +1,19 @@
 package Model;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class chatBotModel
 {
 	
-
 	
-	public chatBotModel() {
-		
+	public void simpleBot() {
+			this.joke = "This is joke";
+			this.currentUser = new String("new string");
+			this.content = new String("Empty content");
+			this.responseList = new ArrayList();
+			buildTheList();
 	}
 	
 	public String chatBotModel() {
