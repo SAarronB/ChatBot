@@ -1,15 +1,15 @@
 package controller;
 
 import javax.swing.JOptionPane;
-import Model.chatBotModel;
+import Model.ChatBot;
 
-public class controllerChatBot
+public class ChatController
 {
 	
-	private chatBotModel simpleBot;
+	private ChatBot simpleBot;
 	
-	public controllerChatBot() {
-		simpleBot = new chatBotModel();
+	public ChatController() {
+		simpleBot = new ChatBot();
 	}
 	 
 	public void start() {

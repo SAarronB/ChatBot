@@ -1,13 +1,13 @@
 package controller;
 
 
-public class runnerChatBot
+public class ChatRunner
 {
 
 	public static void main(String[] args) 
 	{
 		
-		controllerChatBot app = new controllerChatBot();
+		ChatController app = new ChatController();
 		
 		app.start();
 		

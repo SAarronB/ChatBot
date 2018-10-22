@@ -4,18 +4,33 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class chatBotModel
+public class ChatBot
 {
 	
 	
-	public void simpleBot() {
-			this.joke = "This is joke";
-			this.currentUser = new String("new string");
-			this.content = new String("Empty content");
-			this.responseList = new ArrayList();
-			buildTheList();
+	private String joke;
+	private String currentUser;
+	private String content;
+	private ArrayList responseList;
+
+	public void simpleBot() 
+	{
+			
+		this.joke = "This is joke";
+		this.currentUser = new String("new string");
+		this.content = new String("Empty content");
+		this.responseList = new ArrayList();
 	}
 	
+	private String joke() {
+		return null;	
+	}
+	
+	private String content() {
+		
+		return"";
+	}
+
 	public String chatBotModel() {
 		
 		return"";
@@ -51,15 +66,6 @@ public class chatBotModel
 		user[1] = ageAnswer;
 		user[2] = langAnswer;
 		return user;
-	}
-	
-	private String joke() {
-		return null;	
-	}
-	
-	private String content() {
-		
-		return"";
 	}
 	
 }
