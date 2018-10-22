@@ -1,15 +1,15 @@
-package Model;
+package chat.model;
 
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-public class ChatBot
+public class Chatbot
 {
 	
 	
 	private String joke;
-	private String currentUser;
+	private String[] currentUser;
 	private String content;
 	private ArrayList responseList;
 
@@ -17,7 +17,7 @@ public class ChatBot
 	{
 			
 		this.joke = "This is joke";
-		this.currentUser = new String("new string");
+		this.currentUser = currentUser();
 		this.content = new String("Empty content");
 		this.responseList = new ArrayList();
 	}
@@ -66,6 +66,12 @@ public class ChatBot
 		user[1] = ageAnswer;
 		user[2] = langAnswer;
 		return user;
+	}
+
+	public String processText(String userResponse)
+	{
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }
