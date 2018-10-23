@@ -73,5 +73,12 @@ public class Chatbot
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Object getSpookyList()
+	{
+		String spookyList[];
+		
+		return null;
+	}
 	
 }
