@@ -8,22 +8,23 @@ public class Chatbot
 {
 	
 	
-	private String joke;
+	private String theJoke;
 	private String[] currentUser;
 	private String content;
 	private ArrayList responseList;
-
-	public void simpleBot() 
+	
+	
+	public String simpleBot(String userResponse) 
 	{
-			
-		this.joke = "This is joke";
-		this.currentUser = currentUser();
-		this.content = new String("Empty content");
-		this.responseList = new ArrayList();
+		if (userResponse.equals("Tell Joke")) {
+			return joke();
+		}
+		return "";
 	}
 	
 	private String joke() {
-		return null;	
+		this.theJoke = "This is joke";
+		return theJoke;	
 	}
 	
 	private String content() {
@@ -31,7 +32,7 @@ public class Chatbot
 		return"";
 	}
 
-	public String chatBotModel() {
+	public String ChatBot() {
 		
 		return"";
 	}
@@ -70,15 +71,30 @@ public class Chatbot
 
 	public String processText(String userResponse)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		
+		
+		
+		return userResponse ;
 	}
 
 	public Object getSpookyList()
 	{
-		String spookyList[];
+		ArrayList<String> spookyList [];
 		
 		return null;
+	}
+
+	public boolean legitimacyChecker(String input)
+	{
+		boolean isValid = true;
+		if(input == null) {
+			isValid = false;
+		}else if(input.equals("") || input.equals("asdfghjkl")) {
+			isValid = false;
+		}else if(input.contains("dfg") || input.contains("cvb")) {
+		    isValid = false;
+		}
+		return isValid;
 	}
 	
 }
