@@ -20,9 +20,10 @@ public class ChatController
 		}
 	}
 	
-	public String interactWithChatbot(){
+	public String interactWithChatbot(String string){
 		String userResponse = JOptionPane.showInputDialog(null, "type");
 		String output = simpleBot.processText(userResponse);
+		JOptionPane.showMessageDialog(null, output);
 		return output;
 	}
 	
@@ -34,9 +35,14 @@ public class ChatController
 
 	}
 
-	public String useChatbotCheckers(String string)
+	public String useChatbotCheckers(String spookyChecker)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		String inform = "";
+		if(spookyChecker.equals("true")) {
+			inform = "SpookyList has Halloween in first Place";
+		}else {
+			inform = "null";
+		}
+		return inform;
 	}
 }
