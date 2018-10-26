@@ -40,7 +40,15 @@ public class Chatbot
 	
 	public String getContent() {
 		
+		
+		
 		return"";
+	}
+
+	public boolean contentChecker(String getContent)
+	{
+		
+		return false;
 	}
 	
 	public void get() {
@@ -65,7 +73,6 @@ public class Chatbot
 	public String[] getCurrentUser() {
 		String hairAnswer = JOptionPane.showInputDialog(null, "What is your hair Color?");
 		String ageAnswer = JOptionPane.showInputDialog(null, "What is your age?");
-		//int ageInt = Integer.parseInt(ageAnswer);
 		String langAnswer = JOptionPane.showInputDialog(null, "What is your name?");
 		
 		String user[] = new String[2];
@@ -80,18 +87,40 @@ public class Chatbot
 		String processedText = "";
 		if (userResponse != null && userResponse.isEmpty()) {
 			processedText = "user response isnt null or empty";
-			if(userResponse.length() > 0) {
-				processedText = "user response is biger than 0";
+			if(userResponse.length() >= 0 || userResponse.equals(null)) {
+				processedText = "userResponse is null or empty";
 			}
 		}
 		
 		return processedText;
+	}
+	
+	public Boolean spookyChecker(String listString)
+	{
+
+		Boolean result = false;
+		if(listString.contains("Halloween")) {
+			result = true;
+		}else if(listString.contains("Easter")){
+			result = false;
+		}else {
+			result = null;
+		}
+		return result;
 	}
 
 	public ArrayList<String> getSpookyList()
 	{
 		ArrayList<String> spookyList = new ArrayList<String>();
 		spookyList.add(0, "Halloween");
+		spookyList.add(1, "Halloween");
+		spookyList.add(2, "Halloween");
+		spookyList.add(3, "Halloween");
+		spookyList.add(4, "Halloween");
+		spookyList.add(5, "Halloween");
+		spookyList.add(6, "Halloween");
+		spookyList.add(7, "Halloween");
+		spookyList.add(8, "Easter");
 		return spookyList;
 	}
 
@@ -130,22 +159,4 @@ public class Chatbot
 		
 		return theResponseList;
 	}
-
-	public String spookyChecker(ArrayList<String>spookyList[])
-	{
-		String result = "";
-		if(spookyList[0].contains("Halloween")) {
-			result = "true";
-		}else {
-			result = "null";
-		}
-		return result;
-	}
-
-	public boolean contentChecker(String content2)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 }
