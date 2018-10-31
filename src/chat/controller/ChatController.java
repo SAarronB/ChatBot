@@ -35,10 +35,10 @@ public class ChatController
 
 	}
 
-	public String useChatbotCheckers(String spookyChecker)
+	public String useChatbotCheckers(String str)
 	{
 		String inform = "";
-		if(spookyChecker.equals("true")) {
+		if(spookyList.contains("true")) {
 			inform = "SpookyList has Halloween in first Place";
 		}else {
 			inform = "null";

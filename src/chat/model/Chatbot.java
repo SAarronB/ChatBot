@@ -12,8 +12,8 @@ public class Chatbot
 	private String theJoke;
 	private String[] currentUser;
 	private String content;
+	private ArrayList<String> spookyList;
 	private ArrayList responseList;
-	
 	
 	public Chatbot(String string)
 	{
@@ -84,28 +84,28 @@ public class Chatbot
 
 	public String processText(String userResponse)
 	{
-		String processedText = "";
-		if (userResponse != null && userResponse.isEmpty()) {
-			processedText = "user response isnt null or empty";
-			if(userResponse.length() >= 0 || userResponse.equals(null)) {
-				processedText = "userResponse is null or empty";
-			}
-		}
+		String sampleText = "";
+		String outPut = "";
 		
-		return processedText;
+		String outPut1 = "You said: " + userResponse;
+		outPut += outPut1 + "Chatbot says: " + sampleText;
+		return outPut;
 	}
 	
-	public Boolean spookyChecker(String listString)
-	{
-
-		Boolean result = false;
-		if(listString.contains("Halloween")) {
-			result = true;
-		}else if(listString.contains("Easter")){
-			result = false;
-		}else {
-			result = null;
-		}
+	public Boolean spookyChecker(String userResponse){
+		 Boolean result = null;
+		 String magicWord = "Halloween";
+		 if(userResponse.contains(magicWord)) {
+			result = true; 
+		 }
+		 for(String phrase: spookyList) {
+			 if(phrase.contains(magicWord)) {
+				 result = true;
+			 }
+		 }
+		 if(userResponse.contains("easter")) {
+			 	result = false;
+		 	}
 		return result;
 	}
 
