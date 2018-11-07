@@ -7,6 +7,8 @@ import chat.model.Chatbot;
 public class ChatController
 {
 	
+	private Chatbot spookyChecker;
+	private Chatbot spookyList;
 	private Chatbot simpleBot;
 	
 	public ChatController() {
@@ -16,7 +18,7 @@ public class ChatController
 	public void start() {
 		String userText = JOptionPane.showInputDialog(null, "type anything");
 		while(!userText.equalsIgnoreCase("quit")) {
-			userText = JOptionPane.showInputDialog(null, "Type 'quit' to exit");
+			userText = JOptionPane.showInputDialog(null, "Type Something");
 		}
 	}
 	
@@ -35,10 +37,10 @@ public class ChatController
 
 	}
 
-	public String useChatbotCheckers(String str)
+	public String useChatbotCheckers(String str, Chatbot spookyChecker)
 	{
 		String inform = "";
-		if(spookyList.contains("true")) {
+		if(spookyList.equals("Halloween")) {
 			inform = "SpookyList has Halloween in first Place";
 		}else {
 			inform = "null";

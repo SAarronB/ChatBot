@@ -25,9 +25,9 @@ public class Chatbot
 	
 	}
 
-	public String simpleBot(String userResponse) 
+	public String simpleBot(String userText) 
 	{
-		if (userResponse.equals("Tell Joke")) {
+		if (userText.equals("Tell Joke")) {
 			return joke();
 		}
 		return "";
@@ -82,20 +82,20 @@ public class Chatbot
 		return user;
 	}
 
-	public String processText(String userResponse)
+	public String processText(String spookyPhrase)
 	{
 		String sampleText = "";
 		String outPut = "";
 		
-		String outPut1 = "You said: " + userResponse;
+		String outPut1 = "You said the spooky phrase: " + spookyPhrase;
 		outPut += outPut1 + "Chatbot says: " + sampleText;
 		return outPut;
 	}
 	
-	public Boolean spookyChecker(String userResponse){
+	public Boolean spookyChecker(String userText){
 		 Boolean result = null;
 		 String magicWord = "Halloween";
-		 if(userResponse.contains(magicWord)) {
+		 if(userText.contains(magicWord)) {
 			result = true; 
 		 }
 		 for(String phrase: spookyList) {
@@ -103,7 +103,7 @@ public class Chatbot
 				 result = true;
 			 }
 		 }
-		 if(userResponse.contains("easter")) {
+		 if(userText.contains("easter")) {
 			 	result = false;
 		 	}
 		return result;
@@ -121,6 +121,7 @@ public class Chatbot
 		spookyList.add(6, "Halloween");
 		spookyList.add(7, "Halloween");
 		spookyList.add(8, "Easter");
+		
 		return spookyList;
 	}
 
