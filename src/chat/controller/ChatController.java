@@ -37,7 +37,7 @@ public class ChatController
 
 	}
 
-	public String useChatbotCheckers(String str, Chatbot spookyChecker)
+	public String useChatbotCheckers(String str)
 	{
 		String inform = "";
 		if(spookyList.equals("Halloween")) {

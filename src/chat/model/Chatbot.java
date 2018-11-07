@@ -48,6 +48,8 @@ public class Chatbot
 	public boolean contentChecker(String getContent)
 	{
 		
+		
+		
 		return false;
 	}
 	
@@ -87,23 +89,23 @@ public class Chatbot
 		String sampleText = "";
 		String outPut = "";
 		
-		String outPut1 = "You said the spooky phrase: " + spookyPhrase;
+		String outPut1 = "You said: the spooky phrase -> " + spookyPhrase;
 		outPut += outPut1 + "Chatbot says: " + sampleText;
 		return outPut;
 	}
 	
-	public Boolean spookyChecker(String userText){
+	public Boolean spookyChecker(String phrase){
 		 Boolean result = null;
 		 String magicWord = "Halloween";
-		 if(userText.contains(magicWord)) {
+		 if(phrase.contains(magicWord)) {
 			result = true; 
 		 }
-		 for(String phrase: spookyList) {
+//		 for(String phrase: spookyList) {
 			 if(phrase.contains(magicWord)) {
 				 result = true;
 			 }
-		 }
-		 if(userText.contains("easter")) {
+//		 }
+		 if(phrase.contains("easter")) {
 			 	result = false;
 		 	}
 		return result;
