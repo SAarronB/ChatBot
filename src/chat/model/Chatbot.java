@@ -86,28 +86,43 @@ public class Chatbot
 
 	public String processText(String spookyPhrase)
 	{
-		String sampleText = "";
+		String samplText = "";
 		String outPut = "";
+		int randomIndex = (int)(Math.random() * (responseList.size()));
 		
 		String outPut1 = "You said: the spooky phrase -> " + spookyPhrase;
-		outPut += outPut1 + "Chatbot says: " + sampleText;
+		outPut += outPut1 + "Chatbot says: " + randomIndex;
 		return outPut;
 	}
 	
 	public Boolean spookyChecker(String phrase){
-		 Boolean result = null;
+		 Boolean result = false;
 		 String magicWord = "Halloween";
-		 if(phrase.contains(magicWord)) {
-			result = true; 
-		 }
-//		 for(String phrase: spookyList) {
+		 String wrongWord = "Easter";
 			 if(phrase.contains(magicWord)) {
 				 result = true;
+			 }else if(phrase.contains(wrongWord)){
+				 result = false;
 			 }
+			 
+			 for(String str: spookyList) {
+			 	if(str.contains(magicWord)) {
+			 		result = true;
+			 	}
+			 }
+		 
+		 
+//		 if(phrase.contains(magicWord)) {
+//			result = true; 
 //		 }
-		 if(phrase.contains("easter")) {
-			 	result = false;
-		 	}
+//		 for(String word: spookyList) {
+//			 if(word.contains(magicWord)) {
+//				 result = true;
+//			 }
+//		 }
+//		 if(phrase.contains("easter")) {
+//			 	result = false;
+//		 	}
 		return result;
 	}
 

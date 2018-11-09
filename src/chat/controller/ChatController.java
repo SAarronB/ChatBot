@@ -10,6 +10,7 @@ public class ChatController
 	private Chatbot spookyChecker;
 	private Chatbot spookyList;
 	private Chatbot simpleBot;
+	private Chatbot processText;
 	
 	public ChatController() {
 		simpleBot = new Chatbot();
@@ -18,7 +19,7 @@ public class ChatController
 	public void start() {
 		String userText = JOptionPane.showInputDialog(null, "type anything");
 		while(!userText.equalsIgnoreCase("quit")) {
-			userText = JOptionPane.showInputDialog(null, "Type Something");
+			
 		}
 	}
 	
