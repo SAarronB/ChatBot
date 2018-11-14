@@ -39,15 +39,37 @@ public class Chatbot
 	}
 	
 	public String getContent() {
+		String check = "sample content";
 		
 		
-		
-		return"";
+		return check;
 	}
 
 	public boolean contentChecker(String getContent)
 	{
-		
+		if(getContent.contains(content)) {
+			boolean ans = false;
+			int index = content.indexOf(";");
+			String str = content.substring(0, index);
+			String word = str.contains("disk");
+			if(word + 1 == " " && word - 1 == " ") {
+				ans = true;
+			}else if(word.endsWit
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					h("disk") && word - 1 == " ") {
+				ans = true;
+			}
+		}else {
+			return false;
+		}
 		
 		
 		return false;
@@ -86,12 +108,11 @@ public class Chatbot
 
 	public String processText(String spookyPhrase)
 	{
-		String samplText = "";
 		String outPut = "";
 		int randomIndex = (int)(Math.random() * (responseList.size()));
 		
 		String outPut1 = "You said: the spooky phrase -> " + spookyPhrase;
-		outPut += outPut1 + "Chatbot says: " + randomIndex;
+		outPut = outPut1 + "Chatbot says: " + randomIndex;
 		return outPut;
 	}
 	
