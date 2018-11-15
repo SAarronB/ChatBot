@@ -39,41 +39,34 @@ public class Chatbot
 	}
 	
 	public String getContent() {
-		String check = "sample content";
+		String check = "sample";
 		
 		
 		return check;
 	}
 
-	public boolean contentChecker(String getContent)
+	public boolean contentChecker(String check)
 	{
-		if(getContent.contains(content)) {
-			boolean ans = false;
-			int index = content.indexOf(";");
-			String str = content.substring(0, index);
-			String word = str.contains("disk");
-			if(word + 1 == " " && word - 1 == " ") {
+		Boolean ans = false;
+		if(check.contains(content)) {
+			//WHERE THE START OF WORD IS
+			int indexWord = content.indexOf(check);
+			
+			//INDEX OF CHECK PLUSE THE LENGTH OF CHECK
+			int endIndexWord = indexWord + check.length();
+			
+			int whiteSpace = content.indexOf(" ");
+			
+			if(content.endsWith(check) && indexWord - 1 == whiteSpace) {
 				ans = true;
-			}else if(word.endsWit
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					h("disk") && word - 1 == " ") {
+			}else if(indexWord - 1 == whiteSpace && endIndexWord + 1 == whiteSpace) {
 				ans = true;
+			}else {
+			ans = false;
 			}
-		}else {
-			return false;
 		}
-		
-		
-		return false;
-	}
+		return ans;
+	}  
 	
 	public void get() {
 		
@@ -108,42 +101,24 @@ public class Chatbot
 
 	public String processText(String spookyPhrase)
 	{
-		String outPut = "";
-		int randomIndex = (int)(Math.random() * (responseList.size()));
+		int randomIndex = ((int)(Math.random() * (responseList.size())));
 		
 		String outPut1 = "You said: the spooky phrase -> " + spookyPhrase;
-		outPut = outPut1 + "Chatbot says: " + randomIndex;
+		String outPut = outPut1 + "Chatbot says: " + randomIndex;
 		return outPut;
 	}
 	
-	public Boolean spookyChecker(String phrase){
-		 Boolean result = false;
-		 String magicWord = "Halloween";
-		 String wrongWord = "Easter";
-			 if(phrase.contains(magicWord)) {
-				 result = true;
-			 }else if(phrase.contains(wrongWord)){
-				 result = false;
-			 }
-			 
-			 for(String str: spookyList) {
-			 	if(str.contains(magicWord)) {
-			 		result = true;
-			 	}
-			 }
-		 
-		 
-//		 if(phrase.contains(magicWord)) {
-//			result = true; 
-//		 }
-//		 for(String word: spookyList) {
-//			 if(word.contains(magicWord)) {
-//				 result = true;
-//			 }
-//		 }
-//		 if(phrase.contains("easter")) {
-//			 	result = false;
-//		 	}
+	public Boolean spookyChecker(String listString)
+	{
+
+		Boolean result = false;
+		if(listString.contains("Halloween")) {
+			result = true;
+		}else if(listString.contains("Easter")){
+			result = false;
+		}else {
+			result = null;
+		}
 		return result;
 	}
 
