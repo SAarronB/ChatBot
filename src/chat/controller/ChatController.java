@@ -1,35 +1,47 @@
 package chat.controller;
 
+
+//------------------------------IMPORT STATMENTS------------------------
 import javax.swing.JOptionPane;
-
 import chat.model.Chatbot;
+//------------------------------IMPORT STATMENTS------------------------
 
-public class ChatController
-{
+
+public class ChatController{
 	
+//-------------------------------METHOD CALLS----------------------------
 	private Chatbot spookyChecker;
 	private Chatbot spookyList;
 	private Chatbot simpleBot;
 	private Chatbot processText;
+//-------------------------------METHOD CALLS----------------------------
+
 	
+//-------------------------------CONSTRUCTOR-----------------------------
 	public ChatController() {
 		simpleBot = new Chatbot();
 	}
-	 
+//-------------------------------CONSTRUCTOR-----------------------------
+
+	
+//-------------------------APPLICATION STARTS HERE------------------------
 	public void start() {
 		String userText = JOptionPane.showInputDialog(null, "type anything");
-		while(!userText.equalsIgnoreCase("quit")) {
-			
+		while(!userText.equalsIgnoreCase("quit")) {	
 		}
 	}
-	
+//-------------------------APPLICATION STARTS HERE------------------------
+
+//---------------------------CHATBOT INTERATION-------------------------
 	public String interactWithChatbot(String string){
 		String userResponse = JOptionPane.showInputDialog(null, "type");
 		String output = simpleBot.processText(userResponse);
 		JOptionPane.showMessageDialog(null, output);
 		return output;
 	}
-	
+//---------------------------CHATBOT INTERATION-------------------------
+
+//---------------------------GETTER AND SETTER-------------------------
 	public String getChatbot() {
 		return "";
 	}
@@ -37,7 +49,10 @@ public class ChatController
 	public void set() {
 
 	}
+//--------------------------GETTER AND SETTER----------------------------
+	
 
+//---------------------------CHATBOT CHECKER------------------------------
 	public String useChatbotCheckers(String str)
 	{
 		String inform = "";
@@ -48,4 +63,6 @@ public class ChatController
 		}
 		return inform;
 	}
+//---------------------------CHATBOT CHECKER------------------------------
+
 }

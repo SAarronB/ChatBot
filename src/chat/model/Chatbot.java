@@ -1,19 +1,21 @@
 package chat.model;
 
+//------------------------------IMPORT STATMENTS------------------------
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JOptionPane;
+//------------------------------IMPORT STATMENTS------------------------
 
 public class Chatbot
 {
 	
-	
+//-----------------------------DATA MEMBERS----------------------------
 	private String theJoke;
 	private String[] currentUser;
 	private String content;
 	private ArrayList<String> spookyList;
 	private ArrayList responseList;
+//----------------------------DATA MEMBERS------------------------------
 	
 	public Chatbot(String string)
 	{
