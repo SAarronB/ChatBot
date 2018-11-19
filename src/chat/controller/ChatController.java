@@ -14,23 +14,25 @@ public class ChatController{
 	private Chatbot spookyList;
 	private Chatbot simpleBot;
 	private Chatbot processText;
+	private Chatbot askName;
 //-------------------------------METHOD CALLS----------------------------
 
 	
 //-------------------------------CONSTRUCTOR-----------------------------
-	public ChatController() {
+ 	public ChatController() {
 		simpleBot = new Chatbot();
 	}
 //-------------------------------CONSTRUCTOR-----------------------------
 
 	
-//-------------------------APPLICATION STARTS HERE------------------------
+//-------------------------------START HERE------------------------------
 	public void start() {
-		String userText = JOptionPane.showInputDialog(null, "type anything");
-		while(!userText.equalsIgnoreCase("quit")) {	
-		}
+		Chatbot myGuy = new Chatbot();
+		myGuy.askName();
+		myGuy.getCurrentUser(null);
+		myGuy.simpleBot(null);
 	}
-//-------------------------APPLICATION STARTS HERE------------------------
+//--------------------------------START HERE----------------------------
 
 //---------------------------CHATBOT INTERATION-------------------------
 	public String interactWithChatbot(String string){
