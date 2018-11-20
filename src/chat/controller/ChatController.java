@@ -8,7 +8,7 @@ import chat.model.Chatbot;
 
 
 public class ChatController{
-	
+
 //-------------------------------METHOD CALLS----------------------------
 	private Chatbot spookyChecker;
 	private Chatbot spookyList;
@@ -17,20 +17,20 @@ public class ChatController{
 	private Chatbot askName;
 //-------------------------------METHOD CALLS----------------------------
 
-	
+
 //-------------------------------CONSTRUCTOR-----------------------------
  	public ChatController() {
 		simpleBot = new Chatbot();
 	}
 //-------------------------------CONSTRUCTOR-----------------------------
 
-	
+
 //-------------------------------START HERE------------------------------
 	public void start() {
 		Chatbot myGuy = new Chatbot();
 		myGuy.askName();
 		myGuy.getCurrentUser(null);
-		myGuy.simpleBot(null);
+		myGuy.simpleBot();
 	}
 //--------------------------------START HERE----------------------------
 
@@ -47,12 +47,12 @@ public class ChatController{
 	public String getChatbot() {
 		return "";
 	}
-	
+
 	public void set() {
 
 	}
 //--------------------------GETTER AND SETTER----------------------------
-	
+
 
 //---------------------------CHATBOT CHECKER------------------------------
 	public String useChatbotCheckers(String str)

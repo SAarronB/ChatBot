@@ -8,24 +8,24 @@ import javax.swing.JOptionPane;
 
 public class Chatbot{
 //-----------------------------DATA MEMBERS----------------------------
-	private String theJoke;
+	// private String theJoke;
 	private String[] currentUser;
 	private String content;
 	private ArrayList<String> spookyList;
 	private ArrayList responseList;
 //----------------------------DATA MEMBERS------------------------------
-	
-	
+
+
 //---------------------------CONSTRUCTOR---------------------------
 	public Chatbot(String string){
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	public Chatbot() {
-		
+
 	}
 //--------------------------CONSTRUCTOR---------------------------
-	
+
 
 //-----------------------------LISTS------------------------------
 
@@ -40,10 +40,10 @@ public class Chatbot{
 		spookyList.add(6, "Halloween");
 		spookyList.add(7, "Halloween");
 		spookyList.add(8, "Easter");
-		
+
 		return spookyList;
 	}
-	
+
 	public ArrayList<String> getResponseList(){
 		ArrayList<String> theResponseList = new ArrayList<String>();
 		theResponseList.add(0, "Hello");
@@ -62,37 +62,37 @@ public class Chatbot{
 		theResponseList.add(13, "Red");
 		theResponseList.add(14, "Dog");
 		theResponseList.add(15, "Pupper");
-		
+
 		return theResponseList;
 	}
 //-----------------------------LISTS------------------------------
 
-	
+
 //-----------------------------TASKS------------------------------
-	
+
 	private String joke() {
-		this.theJoke = "This is joke";
-		return theJoke;	
+		String theJoke = "This is joke";
+		return theJoke;
 	}
-	
+
 	public String askName() {
 		String nameAnswer = JOptionPane.showInputDialog(null, "What is your name?");
-		
+
 		if(nameAnswer == null) {
 			JOptionPane.showMessageDialog(null, "Fine Dont Answer!!");
 		}else if(nameAnswer.equalsIgnoreCase("quit")){
-			
+
 		}else {
 			JOptionPane.showMessageDialog(null, "ChatBot said:" + nameAnswer + ", thats a nice name");
 		}
 		return nameAnswer;
 	}
-	
+
 	public String[] getCurrentUser(String nameAnswer) {
 		String hairAnswer = JOptionPane.showInputDialog(null, "What is your hair Color?");
 		String ageAnswer = JOptionPane.showInputDialog(null, "What is your age?");
 		JOptionPane.showMessageDialog(null, "ChatBot said:" + "Thank you for the data :)");
-		
+
 		String user[] = new String[3];
 		user[0] = hairAnswer;
 		user[1] = ageAnswer;
@@ -100,8 +100,8 @@ public class Chatbot{
 		return user;
 	}
 //-----------------------------TASKS------------------------------
-	
-	
+
+
 //----------------------------RUN TASK-----------------------------
 	public String simpleBot(String theJoke) {
 		String jokeAnswer = JOptionPane.showInputDialog("Would You Like To Hear A Joke?");
@@ -113,14 +113,14 @@ public class Chatbot{
 		}
 		return out;
 	}
-	
+
 	public String getContent() {
 		String check = "sample";
 		return check;
 	}
 //----------------------------RUN TASK------------------------------
 
-	
+
 //----------------------------CHECKERS-------------------------------
 
 	public boolean contentChecker(String check){
@@ -128,12 +128,12 @@ public class Chatbot{
 		if(check.contains(content)) {
 			//WHERE THE START OF WORD IS
 			int indexWord = content.indexOf(check);
-			
+
 			//INDEX OF CHECK PLUSE THE LENGTH OF CHECK
 			int endIndexWord = indexWord + check.length();
-			
+
 			int whiteSpace = content.indexOf(" ");
-			
+
 			if(content.endsWith(check) && indexWord - 1 == whiteSpace) {
 				ans = true;
 			}else if(indexWord - 1 == whiteSpace && endIndexWord + 1 == whiteSpace) {
@@ -143,16 +143,16 @@ public class Chatbot{
 			}
 		}
 		return ans;
-	} 
-	
+	}
+
 	public String processText(String spookyPhrase){
 		int randomIndex = ((int)(Math.random() * (responseList.size())));
-		
+
 		String outPut1 = "You said: the spooky phrase -> " + spookyPhrase;
 		String outPut = outPut1 + "Chatbot says: " + randomIndex;
 		return outPut;
 	}
-	
+
 	public Boolean spookyChecker(String listString){
 
 		Boolean result = false;
