@@ -2,6 +2,7 @@ package chat.view;
 
 import chat.controller.ChatController;
 import java.awt.Color;
+import java.awt.Dimension;
 import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -24,6 +25,7 @@ public class ChatPanel extends JPanel{
 //-------------------------Constructor-----------------------
 	public ChatPanel(ChatController appController) {
 		super();
+		setBackground(Color.DARK_GRAY);
 		this.appController = appController;
 		//BUTTONS
 		chatButton = new JButton("Chat");
@@ -33,8 +35,10 @@ public class ChatPanel extends JPanel{
 		
 		chatField = new JTextField("Talk to the bot here", 50);
 		chatArea = new JTextArea("Chat Area", 20, 50);
+		chatArea.setBackground(Color.GRAY);
 		chatPane = new JScrollPane();
 		
+		setupPanel();
 		setupScrollPane();
 		setupLayout();
 		setupListener();
@@ -53,12 +57,27 @@ public class ChatPanel extends JPanel{
 		chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	}
 	
+	private void setupPanel() {
+		this.setLayout(appLayout);
+		this.setPreferredSize(new Dimension(800,600));
+		this.setBackground(Color.MAGENTA);
+		
+		//add all buttons
+		//EXCEPT FOR AREA!!!!!
+		this.add(chatPane);
+		this.add(chatButton);
+		this.add(saveButton);
+		this.add(loadButton);
+		this.add(checkerButton);
+		this.add(chatField);
+	}
+	
 	private void setupLayout() {
 		
 	}
 	
 	private void setupListener() {
-		
+		chatButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent click){}});
 	}
 	
 	

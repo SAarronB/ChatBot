@@ -2,17 +2,19 @@ package chat.view;
 
 import javax.swing.JFrame;
 import chat.controller.ChatController;
+import chat.view.ChatPanel;
 public class ChatFrame extends JFrame
 {
-	public ChatFrame(ChatController appController) {
+	private ChatController appController;
+	private ChatPanel appPane;
+
+	public ChatFrame(ChatController chatController) {
 		super();
-		this.appController = appController;
-		this.appPanel = new ChatPanel(appController);
 		setupFrame();
 	}
 	
 	private void setupFrame() {
-		this.setContentPane(appPanel);
+		this.setContentPane(appPane);
 		this.setSize(1000, 500);
 		this.setTitle("Bears, Beats, BattelStar Galactica");
 		this.setResizable(false);

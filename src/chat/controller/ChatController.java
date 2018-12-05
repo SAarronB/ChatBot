@@ -4,6 +4,7 @@ package chat.controller;
 //------------------------------IMPORT STATMENTS------------------------
 import javax.swing.JOptionPane;
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
 //------------------------------IMPORT STATMENTS------------------------
 
 
@@ -15,22 +16,27 @@ public class ChatController{
 	private Chatbot simpleBot;
 	private Chatbot processText;
 	private Chatbot askName;
+	private ChatFrame appFrame;
 //-------------------------------METHOD CALLS----------------------------
 
 
 //-------------------------------CONSTRUCTOR-----------------------------
  	public ChatController() {
 		simpleBot = new Chatbot();
+		appFrame = new ChatFrame(this);
 	}
 //-------------------------------CONSTRUCTOR-----------------------------
 
 
 //-------------------------------START HERE------------------------------
 	public void start() {
-		Chatbot myGuy = new Chatbot();
-		myGuy.askName();
-		myGuy.getCurrentUser(null);
-		myGuy.simpleBot();
+		
+		
+		
+//		Chatbot myGuy = new Chatbot();
+//		myGuy.askName();
+//		myGuy.getCurrentUser(null);
+//		myGuy.simpleBot();
 	}
 //--------------------------------START HERE----------------------------
 
