@@ -148,8 +148,8 @@ public class Chatbot{
 	public String processText(String spookyPhrase){
 		int randomIndex = ((int)(Math.random() * (responseList.size())));
 
-		String outPut1 = "You said: the spooky phrase -> " + spookyPhrase;
-		String outPut = outPut1 + "Chatbot says: " + randomIndex;
+		String outPut1 = "You said: the spooky phrase -> \n" + spookyPhrase;
+		String outPut = outPut1 + "Chatbot says: \n" + randomIndex;
 		return outPut;
 	}
 
