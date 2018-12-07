@@ -98,6 +98,25 @@ public class ChatPanel extends JPanel{
 		}
 		
 	});
+		
+		//Code for reset button
+		checkerButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent click){
+			chatArea.setText("");
+		}
+		
+	});
+		//Code for reset button
+		saveButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent click){
+			chatArea.setText("");
+		}
+		
+	});
+		//Code for reset button
+		loadButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent click){
+			chatArea.setText("");
+		}
+		
+	});
 	
 	//-------------------EXTRA CODE---------------------------
 //	private void changeBackgroundColor() {
