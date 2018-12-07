@@ -15,6 +15,7 @@ public class ChatPanel extends JPanel{
 	private JButton chatButton;
 	private JButton checkerButton;
 	private JButton loadButton;
+	private JButton resetButton;
 	private JButton saveButton;
 
 	private JTextArea chatArea;
@@ -29,8 +30,10 @@ public class ChatPanel extends JPanel{
 		this.appController = appController;
 		//BUTTONS
 		chatButton = new JButton("Chat");
+		
 		checkerButton = new JButton("Check Text");
 		loadButton = new JButton("Load");
+		resetButton = new JButton("Reset");
 		saveButton = new JButton("Save");
 		
 		chatField = new JTextField("Talk to the bot here", 50);
@@ -69,7 +72,10 @@ public class ChatPanel extends JPanel{
 		this.add(saveButton);
 		this.add(loadButton);
 		this.add(checkerButton);
+		this.add(resetButton);
 		this.add(chatField);
+		
+		
 	}
 	
 	private void setupLayout() {
@@ -77,6 +83,7 @@ public class ChatPanel extends JPanel{
 	}
 	
 	private void setupListener() {
+		//Code for chat button
 		chatButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent click){
 			String usertext = chatField.getText();
 			String respond = "";
@@ -84,8 +91,13 @@ public class ChatPanel extends JPanel{
 			chatArea.append(respond);
 			chatArea.setCaretPosition(chatArea.getDocument().getLength());
 			chatField.setText("");}});
-	}
-	
+		
+		//Code for reset button
+		resetButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent click){
+			chatArea.setText("");
+		}
+		
+	});
 	
 	//-------------------EXTRA CODE---------------------------
 //	private void changeBackgroundColor() {
@@ -96,4 +108,5 @@ public class ChatPanel extends JPanel{
 //		chatArea.setBackground(new Color(red,green,blue,alfa));
 //		//textLabel.setText("");
 //	}
+	}
 }
