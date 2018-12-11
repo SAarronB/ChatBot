@@ -72,5 +72,10 @@ public class ChatController{
 		return inform;
 	}
 //---------------------------CHATBOT CHECKER------------------------------
+	
+//---------------------------HANDEL ERRORS--------------------------------
+	public void handelErrors(Exception error) {
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
 
 }

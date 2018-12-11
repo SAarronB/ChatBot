@@ -8,7 +8,7 @@ import java.util.Calendar;
 
 public class IOController
 {
-	public static void saveText(ChatController app, String path, String texttoSave) {
+	public static void saveText(ChatController app, String path, String textToSave) {
 		
 		try {
 			String filename = path;
@@ -17,18 +17,27 @@ public class IOController
 			filename += " chat save.txt";
 			
 			File savefile = new File(filename);
-			Scanner textScanner = new Scanner(texttoSave);
+			Scanner textScanner = new Scanner(textToSave);
+			PrintWriter saveText = new PrintWriter(savefile);
+			
 			while(textScanner.hasNext()) {
+				
 				String currentLine = textScanner.nextLine();
 				saveText.println(currentLine);
 				
 			}
+			
 			textScanner.close();
 			saveText.close();
+			
  		}catch(IOException error){
-			app.handleErrors(error);
+ 			
+			app.handelErrors(error);
+			
 		}catch(Exception genericError) {
-			app.handleErrors(genericError);
+			
+			app.handelErrors(genericError);
+			
 		}
 	}
 }
