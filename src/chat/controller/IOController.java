@@ -55,6 +55,7 @@ public class IOController
 				}
 				fileScanner.close();
 			}
+			
 		}catch(IOException error) {
 			app.handelErrors(error);
 		}catch(Exception genericError) {
