@@ -42,9 +42,8 @@ public class ChatController{
 
 //---------------------------CHATBOT INTERATION-------------------------
 	public String interactWithChatbot(String string){
-		String userResponse = JOptionPane.showInputDialog(null, "type");
-		String output = simpleBot.processText(userResponse);
-		JOptionPane.showMessageDialog(null, output);
+		
+		String output = simpleBot.processText(string);
 		return output;
 	}
 //---------------------------CHATBOT INTERATION-------------------------
