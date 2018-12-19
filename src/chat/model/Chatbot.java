@@ -69,14 +69,15 @@ public class Chatbot{
 
 
 //-----------------------------TASKS------------------------------
-
+	String nameAnswer = JOptionPane.showInputDialog(null, "What is your name?");
+	
 	private String joke() {
 		String theJoke = "This is joke";
 		return theJoke;
 	}
 
-	public String askName() {
-		String nameAnswer = JOptionPane.showInputDialog(null, "What is your name?");
+	public String askName(String nameAnswer) {
+		
 
 		if(nameAnswer == null) {
 			JOptionPane.showMessageDialog(null, "Fine Dont Answer!!");
@@ -88,16 +89,8 @@ public class Chatbot{
 		return nameAnswer;
 	}
 
-	public String[] getCurrentUser(String nameAnswer) {
-		String hairAnswer = JOptionPane.showInputDialog(null, "What is your hair Color?");
-		String ageAnswer = JOptionPane.showInputDialog(null, "What is your age?");
-		JOptionPane.showMessageDialog(null, "ChatBot said:" + "Thank you for the data :)");
-
-		String user[] = new String[3];
-		user[0] = hairAnswer;
-		user[1] = ageAnswer;
-		user[2] = nameAnswer;
-		return user;
+	public String getCurrentUser(){
+		return nameAnswer;
 	}
 //-----------------------------TASKS------------------------------
 
@@ -147,11 +140,17 @@ public class Chatbot{
 
 	public String processText(String spookyPhrase){
 		int randomIndex = ((int)(Math.random() * (responseList.size())));
-
 		String outPut1 = "You said: the spooky phrase -> \n" + spookyPhrase;
+		if(spookyPhrase.equals("")) {
+			String output = outPut1 + "Chatbot says: \n" + randomIndex;
+			return output;
+		}else {
 		String outPut = outPut1 + "Chatbot says: \n" + randomIndex;
 		return outPut;
+		}
+		
 	}
+		
 
 	public Boolean spookyChecker(String listString){
 

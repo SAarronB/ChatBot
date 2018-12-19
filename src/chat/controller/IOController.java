@@ -30,6 +30,7 @@ public class IOController
 			textScanner.close();
 			saveText.close();
 			
+			
  		}catch(IOException error){
  			
 			app.handelErrors(error);
