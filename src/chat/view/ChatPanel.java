@@ -47,11 +47,23 @@ public class ChatPanel extends JPanel{
 		appLayout.putConstraint(SpringLayout.SOUTH, chatField, -33, SpringLayout.NORTH, chatButton);
 		chatPane = new JScrollPane();
 		buttonPanel = new JPanel(new GridLayout(1,0));
+		appLayout.putConstraint(SpringLayout.SOUTH, buttonPanel, -10, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, buttonPanel, -53, SpringLayout.EAST, this);
 		
 		setupPanel();
+		setupButtons();
 		setupScrollPane();
 		setupLayout();
 		setupListener();
+	}
+	
+	private void setupButtons() {
+		buttonPanel.add(saveButton);
+		buttonPanel.add(checkerButton);
+		buttonPanel.add(loadButton);
+		buttonPanel.add(chatButton);
+		buttonPanel.add(tweetButton);
+		buttonPanel.add(searchTwitterButton);
 	}
 	
 //-------------------------------HELPER METHOD--------------------------------
@@ -91,6 +103,9 @@ public class ChatPanel extends JPanel{
 		this.setLayout(appLayout);
 		this.setPreferredSize(new Dimension(1024,768));
 		this.setBackground(Color.MAGENTA);
+		this.add(buttonPanel);
+		buttonPanel.setPreferredSize(new Dimension(900, 150));
+		buttonPanel.setBackground(Color.CYAN);
 		
 		//add all buttons
 		//EXCEPT FOR AREA!!!!!
