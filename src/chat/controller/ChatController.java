@@ -31,12 +31,6 @@ public class ChatController{
 //-------------------------------START HERE------------------------------
 	public void start() {
 		
-		
-		
-//		Chatbot myGuy = new Chatbot();
-//		myGuy.askName();
-//		myGuy.getCurrentUser(null);
-//		myGuy.simpleBot();
 	}
 //--------------------------------START HERE----------------------------
 
@@ -49,8 +43,8 @@ public class ChatController{
 //---------------------------CHATBOT INTERATION-------------------------
 
 //---------------------------GETTER AND SETTER-------------------------
-	public String getChatbot() {
-		return "";
+	public Chatbot getChatbot() {
+		return simpleBot;
 	}
 
 	public void set() {
@@ -60,15 +54,17 @@ public class ChatController{
 
 
 //---------------------------CHATBOT CHECKER------------------------------
-	public String useChatbotCheckers(String str)
+	public String useChatbotCheckers(String text)
 	{
-		String inform = "";
-		if(spookyList.equals("Halloween")) {
-			inform = "SpookyList has Halloween in first Place";
-		}else {
-			inform = "null";
+		String testedValues = "The following checkers passed: ";
+		if (simpleBot.contentChecker(text)){
+			testedValues += "\nContentChecker";
 		}
-		return inform;
+		if (simpleBot.spookyChecker(text)){
+			testedValues += "\nSpooky Checker Happy Halloween";
+		}
+	
+		return testedValues;
 	}
 //---------------------------CHATBOT CHECKER------------------------------
 	

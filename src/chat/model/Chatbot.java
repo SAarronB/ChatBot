@@ -9,7 +9,8 @@ import javax.swing.JOptionPane;
 public class Chatbot{
 //-----------------------------DATA MEMBERS----------------------------
 	// private String theJoke;
-	private String[] currentUser;
+	private String currentUser;
+	private String joke;
 	private String content;
 	private ArrayList<String> spookyList;
 	private ArrayList responseList;
@@ -18,11 +19,17 @@ public class Chatbot{
 
 //---------------------------CONSTRUCTOR---------------------------
 	public Chatbot(String string){
-		// TODO Auto-generated constructor stub
+		this.content = new String("sample text");
 	}
 
 	public Chatbot() {
+		this.joke = "Insert Joke Here";
+		this.currentUser = new String("default user - boring");
+		this.content = new String("empty of all content but not null");
 
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		getResponseList();
 	}
 //--------------------------CONSTRUCTOR---------------------------
 
@@ -108,8 +115,7 @@ public class Chatbot{
 	}
 
 	public String getContent() {
-		String check = "sample";
-		return check;
+		return content;
 	}
 //----------------------------RUN TASK------------------------------
 

@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import chat.controller.IOController;
+import java.awt.GridLayout;
 
 public class ChatPanel extends JPanel{
 	
@@ -18,7 +19,9 @@ public class ChatPanel extends JPanel{
 	private JButton loadButton;
 	private JButton resetButton;
 	private JButton saveButton;
-
+	private JPanel buttonPanel;
+	private JButton tweetButton;
+	private JButton searchTwitterButton;
 	private JTextArea chatArea;
 	private JTextField chatField;
 	private JScrollPane chatPane;
@@ -32,25 +35,18 @@ public class ChatPanel extends JPanel{
 		appLayout = new SpringLayout();
 		//BUTTONS
 		chatButton = new JButton("Chat");
-		appLayout.putConstraint(SpringLayout.WEST, chatButton, 46, SpringLayout.WEST, this);
-		
 		checkerButton = new JButton("Check Text");
-		appLayout.putConstraint(SpringLayout.NORTH, checkerButton, 0, SpringLayout.NORTH, chatButton);
 		loadButton = new JButton("Load");
-		appLayout.putConstraint(SpringLayout.WEST, checkerButton, 22, SpringLayout.EAST, loadButton);
-		appLayout.putConstraint(SpringLayout.NORTH, loadButton, 0, SpringLayout.NORTH, chatButton);
 		resetButton = new JButton("Reset");
-		appLayout.putConstraint(SpringLayout.NORTH, resetButton, 0, SpringLayout.NORTH, chatButton);
-		appLayout.putConstraint(SpringLayout.WEST, resetButton, 15, SpringLayout.EAST, checkerButton);
 		saveButton = new JButton("Save");
-		appLayout.putConstraint(SpringLayout.WEST, loadButton, 25, SpringLayout.EAST, saveButton);
-		appLayout.putConstraint(SpringLayout.NORTH, saveButton, 0, SpringLayout.NORTH, chatButton);
-		appLayout.putConstraint(SpringLayout.WEST, saveButton, 17, SpringLayout.EAST, chatButton);
+		tweetButton = new JButton("Sent Tweet");
+		searchTwitterButton = new JButton("Search Twitter");
 		
 		chatField = new JTextField("Talk to the bot here", 50);
 		appLayout.putConstraint(SpringLayout.WEST, chatField, 90, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, chatField, -33, SpringLayout.NORTH, chatButton);
 		chatPane = new JScrollPane();
+		buttonPanel = new JPanel(new GridLayout(1,0));
 		
 		setupPanel();
 		setupScrollPane();
@@ -93,23 +89,17 @@ public class ChatPanel extends JPanel{
 	private void setupPanel() {
 		
 		this.setLayout(appLayout);
-		this.setPreferredSize(new Dimension(800,600));
+		this.setPreferredSize(new Dimension(1024,768));
 		this.setBackground(Color.MAGENTA);
 		
 		//add all buttons
 		//EXCEPT FOR AREA!!!!!
 		this.add(chatField);
 		this.add(chatPane);
-		this.add(chatButton);
-		this.add(saveButton);
-		this.add(loadButton);
-		this.add(checkerButton);
-		this.add(resetButton);
 		chatArea = new JTextArea("Chat Area", 20, 50);
 		appLayout.putConstraint(SpringLayout.NORTH, chatButton, 111, SpringLayout.SOUTH, chatArea);
 		add(chatArea);
 		chatArea.setBackground(Color.GRAY);
-		
 		
 	}
 	
@@ -121,10 +111,10 @@ public class ChatPanel extends JPanel{
 		
 		//Code for chat button
 		chatButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent click){
-			String usertext = chatField.getText();
-			String respond = "";
-			respond = appController.interactWithChatbot(usertext);
-			chatArea.append(respond);
+			String userText = chatField.getText();
+			String response = "";
+			response = appController.interactWithChatbot(userText);
+			chatArea.append(response);
 			chatArea.setCaretPosition(chatArea.getDocument().getLength());
 			chatField.setText("");}});
 		
