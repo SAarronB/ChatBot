@@ -5,6 +5,7 @@ package chat.controller;
 import javax.swing.JOptionPane;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
+import chat.model.chatTwitter;
 //------------------------------IMPORT STATMENTS------------------------
 
 
@@ -12,6 +13,7 @@ public class ChatController{
 
 //-------------------------------METHOD CALLS----------------------------
 	private Chatbot spookyChecker;
+	private chatTwitter myTwitter;
 	private Chatbot spookyList;
 	private Chatbot simpleBot;
 	private Chatbot processText;
@@ -23,6 +25,7 @@ public class ChatController{
 //-------------------------------CONSTRUCTOR-----------------------------
  	public ChatController() {
 		simpleBot = new Chatbot();
+		myTwitter = new chatTwitter(this);
 		appFrame = new ChatFrame(this);
 	}
 //-------------------------------CONSTRUCTOR-----------------------------
@@ -71,6 +74,10 @@ public class ChatController{
 //---------------------------HANDEL ERRORS--------------------------------
 	public void handelErrors(Exception error) {
 		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
+	
+	public void tweet(String text) {
+		myTwitter.sendTweet(text);
 	}
 
 }
