@@ -182,5 +182,6 @@ public class Chatbot{
 		}
 		return isValid;
 	}
+	
 //---------------------------CHECKERS--------------------------------
 }
